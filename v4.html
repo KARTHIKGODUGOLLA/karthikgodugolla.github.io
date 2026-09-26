@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Karthik Godugolla, AI and Data Engineer</title>
+<meta name="description" content="Karthik Godugolla, AI and data engineer. First-author machine learning research, a deployed SOP-controlled LLM agent, and production data systems in healthcare and automotive.">
+<link rel="preconnect" href="https://maarg-claims-agent.onrender.com">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#0a0b0d;--panel:#11141a;--line:#1f242c;--txt:#e9ecf1;--mut:#99a2ae;--soft:#c7cdd6;--acc:#f5b53f}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--txt);line-height:1.55;-webkit-font-smoothing:antialiased;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,Helvetica,Arial,sans-serif}
+a{color:inherit}
+.wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+nav{position:sticky;top:0;z-index:20;background:rgba(10,11,13,.85);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.navin{display:flex;align-items:center;justify-content:space-between;gap:16px;height:58px}
+.brand{font-weight:700;letter-spacing:-.01em;text-decoration:none}
+.brand i{color:var(--acc);font-style:normal}
+.navlinks{display:flex;gap:20px;align-items:center;font-size:14px}
+.navlinks a{color:var(--mut);text-decoration:none}
+.navlinks a:hover{color:var(--txt)}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:10px 16px;border-radius:999px;border:1px solid var(--line);text-decoration:none;font-size:14px;font-weight:600;white-space:nowrap}
+.btn.pri{background:var(--acc);color:#0a0b0d;border-color:var(--acc)}
+.btn.pri:hover{filter:brightness(1.08)}
+.btn.gho:hover{border-color:#39414d;background:#14181f}
+.btn.sm{padding:8px 14px;font-size:13px}
+.hero{padding:84px 0 56px;position:relative;overflow:hidden}
+.glow{position:absolute;top:-240px;left:50%;transform:translateX(-50%);width:920px;height:480px;background:radial-gradient(closest-side,rgba(245,181,63,.15),rgba(245,181,63,0));pointer-events:none}
+.eyebrow{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--acc);font-weight:700}
+h1{font-size:clamp(34px,6.2vw,60px);line-height:1.04;letter-spacing:-.03em;margin:16px 0 20px;font-weight:800;max-width:20ch}
+h1 span{color:var(--mut)}
+.lead{color:var(--soft);font-size:clamp(16px,2.1vw,19px);max-width:60ch}
+.meta{margin-top:16px;color:var(--mut);font-size:15px;max-width:60ch}
+.cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:46px}
+.stat{border:1px solid var(--line);border-radius:14px;padding:16px 16px 14px;background:linear-gradient(180deg,#12161c,#0c0f13)}
+.stat b{display:block;font-size:25px;letter-spacing:-.02em;line-height:1.1}
+.stat span{display:block;color:var(--mut);font-size:13px;margin-top:6px}
+section{padding:58px 0;border-top:1px solid var(--line)}
+.shead{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;margin-bottom:26px}
+.shead h2{font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:var(--acc)}
+.shead p{color:var(--mut);font-size:14px}
+.card{border:1px solid var(--line);border-radius:18px;background:var(--panel);padding:26px;margin-bottom:18px;transition:border-color .15s ease,transform .15s ease}
+.card:hover{border-color:#333c48;transform:translateY(-2px)}
+.ctop{display:flex;align-items:baseline;justify-content:space-between;gap:14px;flex-wrap:wrap}
+.card h3{font-size:23px;letter-spacing:-.02em}
+.card h3 small{display:block;font-size:15px;font-weight:500;color:var(--mut);letter-spacing:0;margin-top:6px}
+.tag{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--acc);border:1px solid rgba(245,181,63,.35);border-radius:999px;padding:5px 11px}
+.tag.off{color:var(--mut);border-color:var(--line)}
+.sub{color:var(--soft);margin-top:14px;max-width:72ch}
+ul.pts{list-style:none;margin:16px 0 0;display:grid;gap:9px}
+ul.pts li{position:relative;padding-left:18px;color:var(--mut);font-size:15px}
+ul.pts li:before{content:"";position:absolute;left:0;top:9px;width:6px;height:6px;border-radius:50%;background:var(--acc)}
+ul.pts b{color:var(--txt);font-weight:600}
+.chips{display:flex;flex-wrap:wrap;gap:7px;margin-top:18px}
+.chip{font-size:12px;color:var(--mut);border:1px solid var(--line);border-radius:999px;padding:5px 10px;background:#0d1014}
+.note{margin-top:16px;font-size:13px;color:#8b94a0;border-left:2px solid #2a313b;padding-left:12px}
+.demo{margin-top:20px;border:1px solid rgba(245,181,63,.35);background:rgba(245,181,63,.07);border-radius:14px;padding:18px 20px;display:flex;flex-wrap:wrap;align-items:center;gap:16px;justify-content:space-between}
+.demo div p{font-size:13px;color:var(--mut);margin-top:4px}
+.demo strong{font-size:16px}
+.swing{display:grid;grid-template-columns:auto auto auto;gap:18px;align-items:center;margin:18px 0 0;padding:16px 18px;border:1px solid var(--line);border-radius:14px;background:#0d1014;width:fit-content}
+.swing b{display:block;font-size:24px;font-weight:800;letter-spacing:-.02em}
+.swing span{display:block;font-size:12px;color:var(--mut);margin-top:2px}
+.swing .ar{color:var(--mut);font-size:20px}
+.up{color:var(--acc)}
+.dn{color:#ff9d8a}
+.paper{display:grid;grid-template-columns:1fr auto;gap:22px;align-items:center}
+.paper h3{font-size:21px;letter-spacing:-.02em;line-height:1.3}
+.paper .by{color:var(--mut);font-size:14px;margin-top:8px}
+.doi{font-size:13px;color:var(--acc);text-decoration:none;word-break:break-all}
+.exp{display:grid;grid-template-columns:190px 1fr;gap:20px;padding:20px 0;border-top:1px dashed #1c2129}
+.exp.first{border-top:0;padding-top:0}
+.when{color:var(--mut);font-size:13px}
+.exp h4{font-size:17px;letter-spacing:-.01em}
+.exp p{color:var(--mut);font-size:15px;margin-top:6px;max-width:74ch}
+.sk{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.skb{border:1px solid var(--line);border-radius:14px;padding:18px;background:var(--panel)}
+.skb h5{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--acc);margin-bottom:10px}
+.skb p{color:var(--mut);font-size:14px}
+.ed{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:6px}
+.contact{display:flex;flex-wrap:wrap;gap:12px;margin-top:18px}
+footer{border-top:1px solid var(--line);padding:26px 0;color:#6f7884;font-size:13px}
+@media(max-width:860px){.stats{grid-template-columns:repeat(2,1fr)}.sk,.ed{grid-template-columns:1fr}.exp{grid-template-columns:1fr;gap:4px}.paper{grid-template-columns:1fr}.navlinks a.hide{display:none}}
+@media(max-width:520px){.card{padding:20px}.hero{padding:56px 0 40px}.swing{grid-template-columns:1fr;gap:10px;width:100%}.swing .ar{display:none}}
+</style>
+</head>
+<body>
+<nav>
+<div class="wrap navin">
+<a class="brand" href="#top">Karthik Godugolla<i>.</i></a>
+<div class="navlinks">
+<a class="hide" href="#research">Research</a>
+<a class="hide" href="#projects">Projects</a>
+<a class="hide" href="#experience">Experience</a>
+<a class="hide" href="#skills">Skills</a>
+<a href="#contact">Contact</a>
+</div>
+</div>
+</nav>
+<main id="top">
+<header class="hero">
+<div class="glow"></div>
+<div class="wrap">
+<p class="eyebrow">AI and Data Engineer</p>
+<h1>I build AI systems, <span>and the evidence they work.</span></h1>
+<p class="lead">First-author machine learning research, a deployed LLM agent you can talk to right now, and production data systems in healthcare and automotive. Usually as the only engineer on it.</p>
+<p class="meta">M.S. Data Science, Rochester Institute of Technology. Boston, MA, open to relocation. Open to AI Engineer, Machine Learning Engineer, Data Engineer and Data Scientist roles.</p>
+<div class="cta">
+<a class="btn pri" href="https://maarg-claims-agent.onrender.com" target="_blank" rel="noopener">Try my live AI agent</a>
+<a class="btn gho" href="https://github.com/KARTHIKGODUGOLLA" target="_blank" rel="noopener">GitHub</a>
+<a class="btn gho" href="https://linkedin.com/in/karthikgodugolla" target="_blank" rel="noopener">LinkedIn</a>
+<a class="btn gho" href="mailto:karthik.godugolla@gmail.com">Email</a>
+</div>
+<div class="stats">
+<div class="stat"><b>First author</b><span>ML preprint, with DOI</span></div>
+<div class="stat"><b>13,605</b><span>human traces modeled, 56 users</span></div>
+<div class="stat"><b>53</b><span>automated tests on the live agent</span></div>
+<div class="stat"><b>5M+</b><span>records per day in production</span></div>
+</div>
+</div>
+</header>
+<section id="research">
+<div class="wrap">
+<div class="shead"><h2>Research</h2><p>First author, applied machine learning</p></div>
+<div class="card paper">
+<div>
+<p class="eyebrow">Machine Learning Researcher, RIT, Jan 2025 to present</p>
+<h3>Scaling Synthetic Training Data for Mouse-Dynamics Authentication</h3>
+<p class="by">Karthik Godugolla (first author), C. Devlen, D. Hou. Preprint.</p>
+<ul class="pts">
+<li>Re-implemented and adapted a published generative model in <b>PyTorch</b>, verified operation by operation against the TensorFlow reference.</li>
+<li>Distributed multi-worker <b>GPU training with CUDA</b>.</li>
+<li>Designed the experimental methodology: controlled splits, matched controls, significance testing.</li>
+</ul>
+</div>
+<div>
+<a class="btn pri sm" href="https://doi.org/10.5281/zenodo.22679677" target="_blank" rel="noopener">Read the paper</a>
+<p class="by">doi.org/10.5281/zenodo.22679677</p>
+</div>
+</div>
+</div>
+</section>
+<section id="projects">
+<div class="wrap">
+<div class="shead"><h2>Projects</h2><p>Two systems I built end to end, and stress tested</p></div>
+<div class="card">
+<div class="ctop">
+<h3>Maarg<small>An SOP-controlled conversational AI agent for insurance claims</small></h3>
+<span class="tag">Deployed, try it</span>
+</div>
+<p class="sub">Insurance support follows a fixed process. Customers do not. So the LLM interprets each message into schema-validated fields, deterministic Python decides, and the LLM only phrases the reply.</p>
+<ul class="pts">
+<li>Code owns identity verification, workflow phase and tool access. <b>The model never decides any of them.</b></li>
+<li>A deterministic guard inspects every reply for leaked personal data, invented amounts or dates, and false claims that an action happened. Failures regenerate, then fall back to a safe template.</li>
+<li>8-model fallback chain with a circuit breaker, transactional turns, and an inspector panel showing what the model understood versus what the workflow decided.</li>
+<li><b>53 automated tests</b> covering verification rules, cross-customer isolation, consent, escalation and guard behavior.</li>
+</ul>
+<div class="demo">
+<div><strong>Talk to it yourself</strong><p>Free tier hosting, so allow up to a minute for the first load.</p></div>
+<div class="cta" style="margin:0">
+<a class="btn pri sm" href="https://maarg-claims-agent.onrender.com" target="_blank" rel="noopener">Open live demo</a>
+<a class="btn gho sm" href="https://github.com/KARTHIKGODUGOLLA/maarg-the_conversational_agent" target="_blank" rel="noopener">Source</a>
+</div>
+</div>
+<div class="chips"><span class="chip">Python</span><span class="chip">FastAPI</span><span class="chip">Gemini</span><span class="chip">React and TypeScript</span><span class="chip">Docker</span><span class="chip">pytest</span></div>
+<p class="note">Production-style prototype: deployed and publicly reachable, not serving real insurance customers.</p>
+</div>
+<div class="card">
+<div class="ctop">
+<h3>Human vs Agent<small>Can you tell a human from an AI agent by how the cursor moves, with no enrolment and no hardware attestation?</small></h3>
+<span class="tag off">Research case study</span>
+</div>
+<div class="swing">
+<div><b class="up">0.999 AUC</b><span>against my own adversaries</span></div>
+<div class="ar">then</div>
+<div><b class="dn">0.900 AUC</b><span>against an independent attacker</span></div>
+</div>
+<p class="sub">30 features drawn from motor control literature, 13,605 human traces from 56 users, gradient boosting with GroupKFold split by user, and an automated leakage audit gating every result. Then I attacked it with a third-party library that predates the project: 79% of attacks passed (95% CI 67 to 88).</p>
+<ul class="pts">
+<li><b>The diagnosis.</b> One feature, the two-thirds power law correlation, was algebraically near-constant across generated traces (standard deviation 0.003), so it acted as a label. The model had learned how the negatives were manufactured, not how humans move.</li>
+<li><b>Dataset bias, not model capacity.</b> A motor-features-only probe still recovered the real signal (0.916 and 1.000 AUC), so the fix was to regenerate the negatives, not change the architecture.</li>
+<li><b>Inference that ships.</b> The whole feature pipeline hand-ported to zero-dependency JavaScript, client-side with no telemetry leaving the device, 0.7 ms per decision, numerical parity to 8.9e-15.</li>
+<li>Also caught: sampling-rate leakage in step-based features, and a replay defence that let 87.5% of replays through, tightened to 8.2%.</li>
+</ul>
+<div class="chips"><span class="chip">Python</span><span class="chip">scikit-learn</span><span class="chip">pandas</span><span class="chip">JavaScript</span><span class="chip">No public repo yet</span></div>
+<p class="note">A negative result, on purpose. The 0.999 figure only holds against self-generated adversaries, and independent testing contradicted it. The headline number was measuring an artifact of the data generator, and finding that was worth more than the number.</p>
+</div>
+</div>
+</section>
+<section id="experience">
+<div class="wrap">
+<div class="shead"><h2>Experience</h2><p>Three years across healthcare and automotive</p></div>
+<div class="exp first">
+<div class="when">Jul 2025 to Jun 2026<br>Lawrence, MA</div>
+<div>
+<h4>Data Analytics and Machine Learning, Fresenius Medical Care</h4>
+<p>Sole developer on production AI and data systems: an LLM retrieval service over 2,300+ pages now in daily department use, the evaluation harness gating every release, and pipelines processing 5M+ records per day on Snowflake, Databricks, dbt and Airflow. HIPAA-regulated data, least-privilege access, audit logging.</p>
+</div>
+</div>
+<div class="exp">
+<div class="when">Jan 2025 to present<br>Rochester, NY</div>
+<div>
+<h4>Machine Learning Researcher, Rochester Institute of Technology</h4>
+<p>First-author research in applied machine learning, see Research above.</p>
+</div>
+</div>
+<div class="exp">
+<div class="when">Sep 2022 to Jul 2024<br>Bangalore, India</div>
+<div>
+<h4>Software Engineer, Aptiv</h4>
+<p>Pipelines and applied ML over high-fidelity vehicle sensor and tracking data for automated-driving perception at a Tier 1 automotive manufacturer. Cut false positives by approximately 25% rebuilding a production model's validation stage. C++ on embedded sensor targets, hardware-software integration, data contracts standardized across 3 global teams.</p>
+</div>
+</div>
+<div class="ed">
+<div class="skb"><h5>Education</h5><p><b>Rochester Institute of Technology</b>, M.S. Data Science, completed August 2026. GPA 3.76/4.0</p></div>
+<div class="skb"><h5>Also</h5><p><b>Vellore Institute of Technology</b>, Integrated B.S./M.S. Software Engineering. GPA 3.70/4.0</p></div>
+</div>
+</div>
+</section>
+<section id="skills">
+<div class="wrap">
+<div class="shead"><h2>Skills</h2><p>Things I have actually shipped with</p></div>
+<div class="sk">
+<div class="skb"><h5>AI and LLMs</h5><p>LLM applications and agents, RAG and retrieval, embeddings, vector databases (FAISS, ChromaDB), prompt and context engineering, structured outputs, evaluation harnesses, guardrails and refusal behavior. Gemini, OpenAI, LangChain.</p></div>
+<div class="skb"><h5>Machine learning</h5><p>PyTorch, TensorFlow, scikit-learn, CUDA. Feature engineering, gradient boosting, deep learning, grouped cross-validation, data-leakage auditing, threshold calibration, experimental design and significance testing.</p></div>
+<div class="skb"><h5>Data engineering</h5><p>Python, SQL, Spark, Databricks, Snowflake, dbt, Airflow. ETL and ELT pipelines, data modeling, medallion and Lakehouse architecture, data quality and validation, lineage.</p></div>
+<div class="skb"><h5>Platform</h5><p>Docker, Kubernetes, Terraform, Helm, CI/CD (Azure DevOps, GitLab), Git, Linux, FastAPI and REST APIs, React and TypeScript. Azure, AWS, GCP. Also C++, JavaScript, Bash, Power BI, Tableau, Streamlit, pytest.</p></div>
+</div>
+</div>
+</section>
+<section id="contact">
+<div class="wrap">
+<div class="shead"><h2>Contact</h2><p>Email is the fastest way to reach me</p></div>
+<h3 style="font-size:clamp(24px,4vw,34px);letter-spacing:-.02em">Looking for full-time AI, ML and data engineering roles in the US.</h3>
+<p class="meta">Boston, MA, open to relocation. Happy to walk through either project in detail.</p>
+<div class="contact">
+<a class="btn pri" href="mailto:karthik.godugolla@gmail.com">karthik.godugolla@gmail.com</a>
+<a class="btn gho" href="tel:+15852858626">585-285-8626</a>
+<a class="btn gho" href="https://github.com/KARTHIKGODUGOLLA" target="_blank" rel="noopener">GitHub</a>
+<a class="btn gho" href="https://linkedin.com/in/karthikgodugolla" target="_blank" rel="noopener">LinkedIn</a>
+</div>
+</div>
+</section>
+</main>
+<footer>
+<div class="wrap">Karthik Godugolla, Boston MA. Built as a single static page, no trackers.</div>
+</footer>
+</body>
+</html>
