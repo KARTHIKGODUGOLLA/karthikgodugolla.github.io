@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Karthik Godugolla, Embedded Software Engineer</title>
+<meta name="description" content="Karthik Godugolla, embedded software engineer. Deterministic C/C++ and RTOS software for automotive EV systems and FDA-regulated medical devices.">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#0a0c0c;--panel:#101515;--line:#1e2727;--txt:#e8eeec;--mut:#97a4a1;--soft:#c5d0cd;--acc:#3fd6a8;--mono:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--txt);line-height:1.55;-webkit-font-smoothing:antialiased;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,Helvetica,Arial,sans-serif}
+a{color:inherit}
+.wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+nav{position:sticky;top:0;z-index:20;background:rgba(10,12,12,.85);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.navin{display:flex;align-items:center;justify-content:space-between;gap:16px;height:58px}
+.brand{font-weight:700;letter-spacing:-.01em;text-decoration:none}
+.brand i{color:var(--acc);font-style:normal}
+.navlinks{display:flex;gap:20px;align-items:center;font-size:14px}
+.navlinks a{color:var(--mut);text-decoration:none}
+.navlinks a:hover{color:var(--txt)}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:10px 16px;border-radius:999px;border:1px solid var(--line);text-decoration:none;font-size:14px;font-weight:600;white-space:nowrap}
+.btn.pri{background:var(--acc);color:#07100d;border-color:var(--acc)}
+.btn.pri:hover{filter:brightness(1.08)}
+.btn.gho:hover{border-color:#34403f;background:#131a1a}
+.btn.sm{padding:8px 14px;font-size:13px}
+.hero{padding:84px 0 56px;position:relative;overflow:hidden}
+.glow{position:absolute;top:-240px;left:50%;transform:translateX(-50%);width:920px;height:480px;background:radial-gradient(closest-side,rgba(63,214,168,.14),rgba(63,214,168,0));pointer-events:none}
+.grid{position:absolute;inset:0;background-image:linear-gradient(rgba(63,214,168,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(63,214,168,.05) 1px,transparent 1px);background-size:32px 32px;mask-image:radial-gradient(ellipse at 50% 0%,#000 20%,transparent 70%);-webkit-mask-image:radial-gradient(ellipse at 50% 0%,#000 20%,transparent 70%);pointer-events:none}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--acc);font-weight:600}
+h1{font-size:clamp(34px,6.2vw,60px);line-height:1.04;letter-spacing:-.03em;margin:16px 0 20px;font-weight:800;max-width:20ch}
+h1 span{color:var(--mut)}
+.lead{color:var(--soft);font-size:clamp(16px,2.1vw,19px);max-width:62ch}
+.meta{margin-top:16px;color:var(--mut);font-size:15px;max-width:62ch}
+.cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:46px}
+.stat{border:1px solid var(--line);border-radius:14px;padding:16px 16px 14px;background:linear-gradient(180deg,#111818,#0b0f0f)}
+.stat b{display:block;font-size:25px;letter-spacing:-.02em;line-height:1.1}
+.stat span{display:block;color:var(--mut);font-size:13px;margin-top:6px}
+section{padding:58px 0;border-top:1px solid var(--line)}
+.shead{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;margin-bottom:26px}
+.shead h2{font-family:var(--mono);font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--acc)}
+.shead p{color:var(--mut);font-size:14px}
+.card{border:1px solid var(--line);border-radius:18px;background:var(--panel);padding:26px;margin-bottom:18px;transition:border-color .15s ease,transform .15s ease}
+.card:hover{border-color:#2f3b3a;transform:translateY(-2px)}
+.ctop{display:flex;align-items:baseline;justify-content:space-between;gap:14px;flex-wrap:wrap}
+.card h3{font-size:23px;letter-spacing:-.02em}
+.card h3 small{display:block;font-size:15px;font-weight:500;color:var(--mut);letter-spacing:0;margin-top:6px}
+.when-tag{font-family:var(--mono);font-size:12px;color:var(--mut)}
+.tag{font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--acc);border:1px solid rgba(63,214,168,.35);border-radius:999px;padding:5px 11px}
+.tag.off{color:var(--mut);border-color:var(--line)}
+.tags{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.sub{color:var(--soft);margin-top:14px;max-width:72ch}
+ul.pts{list-style:none;margin:16px 0 0;display:grid;gap:9px}
+ul.pts li{position:relative;padding-left:18px;color:var(--mut);font-size:15px}
+ul.pts li:before{content:"";position:absolute;left:0;top:9px;width:6px;height:6px;border-radius:1px;background:var(--acc)}
+ul.pts b{color:var(--txt);font-weight:600}
+.chips{display:flex;flex-wrap:wrap;gap:7px;margin-top:18px}
+.chip{font-family:var(--mono);font-size:12px;color:var(--mut);border:1px solid var(--line);border-radius:6px;padding:4px 9px;background:#0c1111}
+.note{margin-top:16px;font-size:13px;color:#86938f;border-left:2px solid #273231;padding-left:12px}
+.swing{display:grid;grid-template-columns:auto auto auto;gap:18px;align-items:center;margin:18px 0 0;padding:16px 18px;border:1px solid var(--line);border-radius:14px;background:#0c1111;width:fit-content}
+.swing b{display:block;font-family:var(--mono);font-size:24px;font-weight:700;letter-spacing:-.02em}
+.swing span{display:block;font-size:12px;color:var(--mut);margin-top:2px}
+.swing .ar{color:var(--mut);font-size:20px}
+.up{color:var(--acc)}
+.dn{color:#ff9d8a}
+.bar{margin-top:10px;height:8px;border-radius:4px;background:#1a2222;overflow:hidden;width:220px}
+.bar i{display:block;height:100%}
+.sub-role{margin-top:22px;padding-top:18px;border-top:1px dashed #1c2525}
+.sub-role h4{font-size:16px;letter-spacing:-.01em}
+.sub-role h4 span{font-family:var(--mono);font-size:12px;color:var(--mut);font-weight:400;margin-left:8px}
+.sub-role p{color:var(--mut);font-size:15px;margin-top:6px;max-width:74ch}
+.sk{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.skb{border:1px solid var(--line);border-radius:14px;padding:18px;background:var(--panel)}
+.skb.wide{grid-column:1/-1}
+.skb h5{font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--acc);margin-bottom:10px}
+.skb p{color:var(--mut);font-size:14px}
+.skb b{color:var(--txt);font-weight:600}
+.flow{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
+.step{border:1px solid var(--line);border-radius:12px;padding:14px;background:var(--panel)}
+.step code{font-family:var(--mono);font-size:11px;color:var(--acc)}
+.step b{display:block;font-size:15px;margin-top:6px}
+.step p{color:var(--mut);font-size:13px;margin-top:4px}
+.ed{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.contact{display:flex;flex-wrap:wrap;gap:12px;margin-top:18px}
+footer{border-top:1px solid var(--line);padding:26px 0;color:#6c7a77;font-size:13px}
+@media(max-width:860px){.stats{grid-template-columns:repeat(2,1fr)}.sk,.ed{grid-template-columns:1fr}.flow{grid-template-columns:repeat(2,1fr)}.navlinks a.hide{display:none}}
+@media(max-width:520px){.card{padding:20px}.hero{padding:56px 0 40px}.swing{grid-template-columns:1fr;gap:10px;width:100%}.swing .ar{display:none}.flow{grid-template-columns:1fr}.bar{width:100%}}
+</style>
+</head>
+<body>
+<nav>
+<div class="wrap navin">
+<a class="brand" href="#top">Karthik Godugolla<i>.</i></a>
+<div class="navlinks">
+<a class="hide" href="#experience">Experience</a>
+<a class="hide" href="#approach">Approach</a>
+<a class="hide" href="#projects">Projects</a>
+<a class="hide" href="#skills">Skills</a>
+<a href="#contact">Contact</a>
+</div>
+</div>
+</nav>
+<main id="top">
+<header class="hero">
+<div class="grid"></div>
+<div class="glow"></div>
+<div class="wrap">
+<p class="eyebrow">Embedded Software Engineer · C/C++ · RTOS · Automotive</p>
+<h1>Deterministic C/C++ <span>for cars and medical devices.</span></h1>
+<p class="lead">2+ years of embedded software across automotive EV systems and FDA-regulated medical devices. I develop deterministic C/C++ and RTOS software, debug ECU communication, profile constrained targets, and carry work from requirements and design through integration and validation.</p>
+<p class="meta">Open to embedded software, firmware and automotive systems roles, on-site, and open to relocation. M.S., Rochester Institute of Technology. Integrated Master's in Software Engineering, VIT.</p>
+<div class="cta">
+<a class="btn pri" href="mailto:karthik.godugolla@gmail.com">Email me</a>
+<a class="btn gho" href="https://github.com/KARTHIKGODUGOLLA" target="_blank" rel="noopener">GitHub</a>
+<a class="btn gho" href="https://linkedin.com/in/karthikgodugolla" target="_blank" rel="noopener">LinkedIn</a>
+</div>
+<div class="stats">
+<div class="stat"><b>99% → 75%</b><span>MCU CPU load after profiling and tuning</span></div>
+<div class="stat"><b>ISO 15118</b><span>Vehicle-to-Grid stack developed and debugged</span></div>
+<div class="stat"><b>FDA</b><span>regulated medical device development cycles</span></div>
+<div class="stat"><b>AUTOSAR</b><span>ECU communication with the Vector toolchain</span></div>
+</div>
+</div>
+</header>
+
+<section id="experience">
+<div class="wrap">
+<div class="shead"><h2>Experience</h2><p>Automotive EV systems and FDA-regulated medical devices</p></div>
+
+<div class="card">
+<div class="ctop">
+<h3>Embedded Software Engineer<small>Fresenius Medical Care · Lawrence, MA</small></h3>
+<div class="tags"><span class="tag">Medical devices</span><span class="when-tag">Jul 2025 – Dec 2025</span></div>
+</div>
+<p class="sub">Safety-critical C++ for medical devices, built to run deterministically under real-time constraints and to hold up through FDA-regulated verification.</p>
+<ul class="pts">
+<li>Developed <b>modular, safety-critical C++ components</b> using templates and event-driven patterns, including <b>Factory, Publish-Subscribe and Active Object</b> designs.</li>
+<li>Applied <b>RTOS scheduling, synchronization and resource-management</b> principles to support deterministic execution, low-latency behavior and reliable operation under real-time constraints.</li>
+<li>Improved testability of tightly coupled and template-heavy modules with <b>Parasoft C++test</b>, custom stubs and isolation strategies; debugged failures and strengthened regression coverage.</li>
+<li>Delivered features and performance improvements with <b>hardware, firmware and QA partners</b> through FDA-regulated development and verification cycles.</li>
+</ul>
+<div class="chips"><span class="chip">C++</span><span class="chip">Templates</span><span class="chip">RTOS</span><span class="chip">Event-driven design</span><span class="chip">Parasoft C++test</span><span class="chip">FDA-regulated</span></div>
+<div class="sub-role">
+<h4>Data Analytics &amp; Machine Learning <span>Jan 2026 – Jun 2026</span></h4>
+<p>Same company, following role. Sole developer on a production knowledge system for HIPAA-sensitive data, plus Python/FastAPI services in Docker on Azure with CI/CD, monitoring, validation, least-privilege access and audit logging.</p>
+</div>
+</div>
+
+<div class="card">
+<div class="ctop">
+<h3>Software Engineer<small>Aptiv · Embedded EV communication software, SACID program · Bangalore, India</small></h3>
+<div class="tags"><span class="tag">Automotive EV</span><span class="when-tag">Sep 2022 – Jul 2024</span></div>
+</div>
+<p class="sub">C++ modules for an electric-vehicle program, from requirements and detailed design through ECU communication, protocol work and validation.</p>
+<div class="swing">
+<div><b class="dn">99%</b><span>MCU CPU load, before</span><div class="bar"><i style="width:99%;background:#ff9d8a"></i></div></div>
+<div class="ar">→</div>
+<div><b class="up">75%</b><span>after profiling and tuning</span><div class="bar"><i style="width:75%;background:var(--acc)"></i></div></div>
+</div>
+<ul class="pts">
+<li>Reduced MCU CPU load from <b>99% to 75%</b> through runtime profiling, memory optimization and task-priority tuning, improving processing headroom and system stability.</li>
+<li>Designed, implemented and maintained <b>C++ software modules for the SACID electric-vehicle program</b>, translating requirements into detailed designs and tested components for reliable embedded operation.</li>
+<li>Developed and debugged the <b>ISO 15118 Vehicle-to-Grid communication stack</b>, resolving defects and incorporating customer feedback into protocol and feature updates.</li>
+<li>Used <b>AUTOSAR</b> architecture and <b>CANoe, CANalyzer, Candela Studio and the Vector DaVinci</b> toolchain to configure, simulate, diagnose and validate ECU communication behavior.</li>
+<li>Worked within <b>Automotive SPICE</b>-aligned requirements, design, review and testing practices while coordinating bug fixes and feature delivery with customers and cross-functional teams.</li>
+</ul>
+<div class="chips"><span class="chip">C++</span><span class="chip">AUTOSAR</span><span class="chip">ISO 15118</span><span class="chip">CAN</span><span class="chip">CANoe</span><span class="chip">CANalyzer</span><span class="chip">Candela Studio</span><span class="chip">Vector DaVinci</span><span class="chip">Automotive SPICE</span></div>
+</div>
+
+<div class="card">
+<div class="ctop">
+<h3>Machine Learning Researcher<small>Rochester Institute of Technology · Rochester, NY</small></h3>
+<div class="tags"><span class="tag off">Systems implementation</span><span class="when-tag">Jan 2025 – present</span></div>
+</div>
+<ul class="pts">
+<li>Reimplemented TimeGAN in PyTorch and <b>verified operations, losses, optimizers, parameters and gradients</b> against the TensorFlow reference; ran reproducible GPU experiments for a first-author preprint.</li>
+</ul>
+</div>
+</div>
+</section>
+
+<section id="approach">
+<div class="wrap">
+<div class="shead"><h2>How I work</h2><p>Requirements to validation, the same way on both programs</p></div>
+<div class="flow">
+<div class="step"><code>01</code><b>Requirements</b><p>Translate requirements into detailed designs, inside Automotive SPICE and FDA-regulated processes.</p></div>
+<div class="step"><code>02</code><b>Design</b><p>Modular C++ with templates and event-driven patterns: Factory, Publish-Subscribe, Active Object.</p></div>
+<div class="step"><code>03</code><b>Implement</b><p>Deterministic RTOS code: scheduling, synchronization and resource management under real-time constraints.</p></div>
+<div class="step"><code>04</code><b>Integrate</b><p>ECU communication over CAN and AUTOSAR, simulated and diagnosed with CANoe, CANalyzer and DaVinci.</p></div>
+<div class="step"><code>05</code><b>Validate</b><p>Unit and integration tests, stubs and isolation, profiling and debugging, regression coverage.</p></div>
+</div>
+</div>
+</section>
+
+<section id="projects">
+<div class="wrap">
+<div class="shead"><h2>Projects</h2><p>Performance on constrained targets</p></div>
+<div class="card">
+<div class="ctop">
+<h3>Edge Vision Inference Optimization<small>Making a computer-vision pipeline faster without giving up accuracy</small></h3>
+<span class="tag off">Project</span>
+</div>
+<div class="swing">
+<div><b class="up">~32%</b><span>faster inference</span></div>
+<div class="ar">·</div>
+<div><b>&lt; 1 mAP</b><span>accuracy loss</span></div>
+</div>
+<ul class="pts">
+<li>Optimized a computer-vision inference pipeline with <b>quantization</b>, improving inference speed by approximately 32% while keeping accuracy loss below one mAP point.</li>
+</ul>
+<div class="chips"><span class="chip">Python</span><span class="chip">PyTorch</span><span class="chip">OpenCV</span><span class="chip">YOLOv8</span><span class="chip">Quantization</span></div>
+</div>
+</div>
+</section>
+
+<section id="skills">
+<div class="wrap">
+<div class="shead"><h2>Skills</h2><p>Things I have used on real programs</p></div>
+<div class="sk">
+<div class="skb"><h5>Embedded software</h5><p><b>C, C++</b>, modern C++ templates, <b>RTOS</b>, task scheduling, synchronization, resource management, event-driven design, <b>AUTOSAR, ISO 15118, CAN</b>, ECU communication.</p></div>
+<div class="skb"><h5>Tools &amp; quality</h5><p>CANoe, CANalyzer, Candela Studio, Vector DaVinci, Parasoft C++test, Linux, Git/GitLab, unit and integration testing, stubbing, profiling, debugging, CI/CD, Automotive SPICE.</p></div>
+<div class="skb wide"><h5>Additional</h5><p>Python, SQL, PyTorch, TensorFlow, OpenCV, FastAPI, Docker, Azure, Spark, Databricks, dbt, Airflow.</p></div>
+</div>
+<div class="ed" style="margin-top:16px">
+<div class="skb"><h5>Education</h5><p><b>Rochester Institute of Technology</b>, M.S. Data Science, August 2026. GPA 3.76/4.0</p></div>
+<div class="skb"><h5>Also</h5><p><b>Vellore Institute of Technology</b>, Integrated Master's, Software Engineering. GPA 3.7/4.0</p></div>
+</div>
+</div>
+</section>
+
+<section id="contact">
+<div class="wrap">
+<div class="shead"><h2>Contact</h2><p>Email is the fastest way to reach me</p></div>
+<h3 style="font-size:clamp(24px,4vw,34px);letter-spacing:-.02em">Looking for full-time embedded software roles in the US.</h3>
+<p class="meta">Automotive, medical devices, or anything with real-time constraints. Open to on-site roles and relocation.</p>
+<div class="contact">
+<a class="btn pri" href="mailto:karthik.godugolla@gmail.com">karthik.godugolla@gmail.com</a>
+<a class="btn gho" href="tel:+15852858626">585-285-8626</a>
+<a class="btn gho" href="https://github.com/KARTHIKGODUGOLLA" target="_blank" rel="noopener">GitHub</a>
+<a class="btn gho" href="https://linkedin.com/in/karthikgodugolla" target="_blank" rel="noopener">LinkedIn</a>
+</div>
+</div>
+</section>
+</main>
+<footer>
+<div class="wrap">Karthik Godugolla, Embedded Software Engineer. Built as a single static page, no trackers.</div>
+</footer>
+</body>
+</html>
